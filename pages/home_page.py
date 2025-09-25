@@ -7,12 +7,12 @@ class HomePage(BasePage):
 
     @allure.step('Нажать на кнопку "Заказать" в хедере')
     def click_header_order_button(self):
-        self.find_element(HomePageHeaderLocators.header_order_button).click()
+        self.click_button(HomePageHeaderLocators.header_order_button).click()
 
     @allure.step('Нажать на логотип "Яндекс"')
     def click_yandex_logo(self):
-        self.find_element(HomePageHeaderLocators.yandex_logo).click()
+        self.click_button(HomePageHeaderLocators.yandex_logo)
     
     @allure.step('Нажать на логотип "Самокат"')
     def click_scooter_logo(self):
-        self.find_element(HomePageHeaderLocators.scooter_logo).click()
+        self.click_button(HomePageHeaderLocators.scooter_logo).click()
