@@ -1,17 +1,24 @@
 import pytest
-import time
 from pages.home_page import HomePage
-from data.urls import Urls
+from data.data import Questions
+from locators.home_page_locators import HomePageLocators
+import allure
 
 
 class TestHomePage:
     
-    def test_yandex_logo_click(self, driver):
+    @allure.title('Проверка текста ответов с параметризацией')
+    @allure.description('''Параметризованный тест с поочерёдным открытием вопросов
+                    и сверкой ответов с эталонными''')
+    
+    @pytest.mark.parametrize('question_number', [0, 1, 2, 3, 4, 5, 6, 7])
+    def test_questions_and_answers(self, driver, question_number):
         home_page = HomePage(driver)
-        home_page.click_yandex_logo()
-        home_page.go_to_new_tab()
-        time.sleep(5)
-        current_url = home_page.get_current_url()
-        assert current_url == Urls.DZEN_PAGE
-
-
+        expected_answer = Questions.expected_question_text[question_number]
+        
+        home_page.scroll_to_question(question_number)
+        home_page.click_question(question_number)
+        actual_answer = home_page.get_answer_text(question_number)
+        
+        assert actual_answer == expected_answer, \
+            f"Для вопроса {question_number} ожидался текст: '{expected_answer}', но получен: '{actual_answer}'"

@@ -2,7 +2,7 @@
 import pytest
 from selenium import webdriver
 
-from data.urls import Urls
+from data.data import Urls
 
 
 # @allure.step('Открытие браузера / переход на страницу сервиса / закрытие браузера')
