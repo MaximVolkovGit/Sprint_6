@@ -1,7 +1,6 @@
 import pytest
 from pages.home_page import HomePage
 from data.data import Questions
-from locators.home_page_locators import HomePageLocators
 import allure
 
 

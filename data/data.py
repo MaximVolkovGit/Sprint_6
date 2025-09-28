@@ -1,7 +1,7 @@
 class Urls:
-    MAIN_PAGE = 'https://qa-scooter.praktikum-services.ru/'
-    ORDER_PAGE = 'https://qa-scooter.praktikum-services.ru/order'
-    DZEN_PAGE = 'https://dzen.ru/?yredirect=true'
+    MAIN_PAGE = 'https://qa-scooter.praktikum-services.ru/'  # Главная страница
+    ORDER_PAGE = 'https://qa-scooter.praktikum-services.ru/order'   # Страница заказа
+    DZEN_PAGE = 'https://dzen.ru/?yredirect=true'  #  Страница Дзена
 
 
 '''Тексты ответов на вопросы'''
@@ -16,3 +16,25 @@ class Questions:
             'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.',
             'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
     ]
+
+
+class Users:    #  Тестовые данные пользователей
+    user_1 = {
+        1: 'Максим',
+        2: 'Перепелица',
+        3: 'Москва, ул. Ленина, д. 1',
+        4: 'Черкизовская',
+        5: '89206150000',
+        6: '25.09.2025',
+        7: 'Без комментариев',
+    }
+
+    user_2 = {
+        1: 'Василь',
+        2: 'Потрович',
+        3: 'Москва, пл. Победы, д. 2',
+        4: 'Черкизовская',
+        5: '89564567999',
+        6: '26.09.2025',
+        7: 'Везите уже',
+    }

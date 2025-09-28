@@ -1,14 +1,17 @@
 import allure
-from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 from locators.home_page_locators import HomePageLocators
-import time
 
 class HomePage(BasePage):
 
     @allure.step('Нажать на кнопку "Заказать" в хедере')
     def click_header_order_button(self):
         self.click_button(HomePageLocators.header_order_button)
+
+    @allure.step('Нажать на кнопку "Заказать" в середине страницы')
+    def click_order_button(self):
+        self.scroll_to_locator(HomePageLocators.order_button)
+        self.click_button(HomePageLocators.order_button)
 
     @allure.step('Нажать на логотип "Яндекс"')
     def click_yandex_logo(self):

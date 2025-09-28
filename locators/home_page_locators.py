@@ -14,6 +14,7 @@ class HomePageLocators:
 
     '''Вопросы и ответы'''
 
+    # Локаторы текста вопросов
     questions = [
         (By.ID, "accordion__heading-0"),
         (By.ID, "accordion__heading-1"),
